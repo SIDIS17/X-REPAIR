@@ -1,8 +1,6 @@
 # X-REPAIR 17A — Final Multimodal Edition
 
-<p align="center">
-  <img src="assets/branding/spiderman_xrepair.jpg" width="680" alt="X-Repair visual identity">
-</p>
+
 
 **X-Repair 17A** réunit le visuel minimal/neumorphique de **META POMPE** avec une architecture modulaire de diagnostic pour systèmes mécaniques, électromécaniques et électroniques.
 
