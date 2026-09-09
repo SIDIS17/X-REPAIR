@@ -1,0 +1,14 @@
+{
+  "sampling_frequency_hz": 2048.0,
+  "rpm": 1500.0,
+  "highpass_hz": 1.0,
+  "serial_baudrate": 230400,
+  "serial_samples": 4096,
+  "diagnostic_thresholds": {
+    "bearing_hf_ratio": 0.45,
+    "bearing_kurtosis": 4.5,
+    "imbalance_1x_share": 0.65,
+    "misalignment_2x_ratio": 0.6,
+    "looseness_multi_harmonic": 0.65
+  }
+}
