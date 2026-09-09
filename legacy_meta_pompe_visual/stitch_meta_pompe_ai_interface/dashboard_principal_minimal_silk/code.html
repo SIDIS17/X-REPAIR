@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>META POMPE - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#8B5CF6",
+            "primary-container": "#F5F3FF",
+            "on-primary": "#ffffff",
+            "background": "#FFFFFF",
+            "surface": "#FFFFFF",
+            "on-surface": "#1F2937",
+            "on-surface-variant": "#6B7280",
+            "outline": "#E5E7EB",
+            "outline-variant": "#F3F4F6",
+            "secondary": "#8B5CF6",
+            "tertiary": "#8B5CF6",
+            "error": "#8B5CF6" // Overridden per user request for only one accent color
+          },
+          "fontFamily": {
+            "headline": ["Plus Jakarta Sans"],
+            "display": ["Plus Jakarta Sans"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .neumorphic-raised {
+      box-shadow: 8px 8px 16px rgba(0,0,0,0.03), -8px -8px 16px rgba(0,0,0,0.01);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .neumorphic-inset {
+      box-shadow: inset 4px 4px 8px rgba(0,0,0,0.03), inset -4px -4px 8px rgba(0,0,0,0.01);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .gauge-progress {
+      stroke-dasharray: 439.8;
+      stroke-dashoffset: calc(439.8 - (439.8 * 78) / 100);
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-white text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-white fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 shadow-[0_2px_15px_rgba(0,0,0,0.03)]">
+<div class="flex items-center gap-3">
+<div class="neumorphic-raised p-2 rounded-lg bg-white active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-primary font-['Plus_Jakarta_Sans']">META POMPE</h1>
+</div>
+<div class="neumorphic-raised rounded-full p-1 bg-white">
+<img alt="User profile" class="w-10 h-10 rounded-full border-2 border-white" data-alt="A professional close-up portrait of a technician wearing clean modern work attire, set against a softly blurred industrial background with cool blue and purple lighting accents. The style is crisp and high-resolution, matching a premium light-mode UI aesthetic. The overall mood is focused and technologically advanced, echoing the Meta Pompe brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6uhzmNsve9QMq6HmoThtsFl1Rc4CTYPKRM7_XO9HRuSwbZGLRCjMZZtoIR8ynKLyD9xxsiIjHhjAdEZYzK03LPV-3jgjk4xLJs9hh9zJk5UcSKooPoStvT_EDYYItSQ_CtoZDuEga5LhU6SDsenfoJPpzSvVDPJt2mu_WGFuG0hjTLi2eOZcWFJQPw19WhwlXClMyFOsJfwYJ1fOnp3YjcaGIk8UYFmtewltzKjw67wSf7rRJxCIKQx6TumHeLoLIInR8a54lKEEa"/>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-4xl mx-auto space-y-8">
+<!-- Central Health Gauge Section -->
+<section class="flex flex-col items-center justify-center py-8">
+<div class="relative flex items-center justify-center w-64 h-64 rounded-full bg-white neumorphic-raised">
+<div class="absolute inset-4 rounded-full neumorphic-inset flex flex-col items-center justify-center bg-white">
+<span class="text-5xl font-extrabold text-on-surface">78%</span>
+<span class="text-sm font-semibold text-primary uppercase tracking-widest mt-1">Health</span>
+</div>
+<svg class="w-full h-full p-2">
+<circle class="text-slate-50" cx="50%" cy="50%" fill="none" r="70" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary gauge-progress" cx="50%" cy="50%" fill="none" r="70" stroke="currentColor" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+</div>
+<div class="mt-8 flex items-center gap-4 bg-white neumorphic-raised px-6 py-3 rounded-full">
+<div class="w-3 h-3 rounded-full bg-primary animate-pulse"></div>
+<span class="font-bold text-on-surface uppercase tracking-wider text-sm">Status: <span class="text-primary">Surveillance</span></span>
+</div>
+</section>
+<!-- Key Indicators Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Bearing Card -->
+<div class="bg-white p-6 rounded-xl neumorphic-raised transition-transform hover:translate-y-[-2px] group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-white rounded-xl neumorphic-inset text-primary">
+<span class="material-symbols-outlined" data-icon="settings_slow_motion" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings_slow_motion</span>
+</div>
+<span class="text-2xl font-bold text-on-surface">82%</span>
+</div>
+<h3 class="font-semibold text-on-surface-variant text-sm mb-3">Bearing Efficiency</h3>
+<div class="h-2 w-full bg-slate-50 rounded-full neumorphic-inset overflow-hidden">
+<div class="h-full bg-primary w-[82%] rounded-full"></div>
+</div>
+</div>
+<!-- Cavitation Card -->
+<div class="bg-white p-6 rounded-xl neumorphic-raised transition-transform hover:translate-y-[-2px] group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-white rounded-xl neumorphic-inset text-primary">
+<span class="material-symbols-outlined" data-icon="waves" data-weight="fill" style="font-variation-settings: 'FILL' 1;">waves</span>
+</div>
+<span class="text-2xl font-bold text-on-surface">15%</span>
+</div>
+<h3 class="font-semibold text-on-surface-variant text-sm mb-3">Cavitation Risk</h3>
+<div class="h-2 w-full bg-slate-50 rounded-full neumorphic-inset overflow-hidden">
+<div class="h-full bg-primary w-[15%] rounded-full"></div>
+</div>
+</div>
+<!-- Alignment Card -->
+<div class="bg-white p-6 rounded-xl neumorphic-raised transition-transform hover:translate-y-[-2px] group">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-white rounded-xl neumorphic-inset text-primary">
+<span class="material-symbols-outlined" data-icon="straighten" data-weight="fill" style="font-variation-settings: 'FILL' 1;">straighten</span>
+</div>
+<span class="text-2xl font-bold text-on-surface">95%</span>
+</div>
+<h3 class="font-semibold text-on-surface-variant text-sm mb-3">Axis Alignment</h3>
+<div class="h-2 w-full bg-slate-50 rounded-full neumorphic-inset overflow-hidden">
+<div class="h-full bg-primary w-[95%] rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Next Actions Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-on-surface">Next Actions</h2>
+<button class="text-primary font-semibold text-sm hover:underline">View Schedule</button>
+</div>
+<div class="space-y-4">
+<!-- Maintenance Item 1 -->
+<div class="bg-white p-5 rounded-2xl neumorphic-raised flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full neumorphic-inset flex items-center justify-center text-primary bg-white">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Filter Replacement</p>
+<p class="text-xs text-on-surface-variant">Due in 4 days • Scheduled Maintenance</p>
+</div>
+</div>
+<button class="bg-white px-4 py-2 rounded-xl neumorphic-raised text-primary text-xs font-bold active:scale-95 transition-transform">
+            LOG TASK
+          </button>
+</div>
+<!-- Maintenance Item 2 -->
+<div class="bg-white p-5 rounded-2xl neumorphic-raised flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full neumorphic-inset flex items-center justify-center text-primary bg-white">
+<span class="material-symbols-outlined" data-icon="oil_barrel">oil_barrel</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Lubrication Cycle</p>
+<p class="text-xs text-on-surface-variant">Pending for Unit MP-04 • Critical</p>
+</div>
+</div>
+<button class="bg-white px-4 py-2 rounded-xl neumorphic-raised text-primary text-xs font-bold active:scale-95 transition-transform">
+            START NOW
+          </button>
+</div>
+</div>
+</section>
+<!-- Pump Visual Representation -->
+<section class="bg-white rounded-3xl neumorphic-raised overflow-hidden p-2">
+<div class="relative h-48 rounded-2xl overflow-hidden group">
+<img alt="Industrial Pump" class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105" data-alt="A highly detailed close-up of a high-tech industrial water pump station, featuring metallic surfaces reflecting soft purple and blue ambient lighting. The pump is maintained in an immaculate, ultra-modern facility with a clinical light-mode aesthetic. Glowing diagnostic light strips on the machinery indicate active surveillance. The atmosphere is professional, sleek, and futuristic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKTKBxYzPkH9qVCw8d3tHPIcvGJd5kv1dkTjdt_L8Veovne_w3SABlQYFFNFwyHB3kw14y3y1QP6gMtpETMmL-OKJYo3RfNEtIMNoRL-q-pt4mnkjgMSQz-kpc_Hc1iMhQfvBuHc-AGZR3kF9kEvxifxRxpPqSEHiewR7gkjlmXB8UlGsQ80O2ZZ0lONeDdtnCg20nzEKVcOOEENHdx5w65DQ03DgjMSbo7GqGny37-7sQa-d6Q8q8QB330vit64PI-duW4a6umWbe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent"></div>
+<div class="absolute bottom-4 left-6">
+<span class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter mb-2 inline-block">Active Unit: MP-01</span>
+<h3 class="text-lg font-bold text-on-surface">Main Centrifugal Pump</h3>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white shadow-[0_-2px_15px_rgba(0,0,0,0.03)] rounded-t-[24px]">
+<!-- Status (Active) -->
+<a class="flex flex-col items-center justify-center text-primary neumorphic-inset rounded-2xl px-4 py-2 transition-transform active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-bold mt-1">Status</span>
+</a>
+<!-- Reports -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-medium mt-1">Reports</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-medium mt-1">History</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-95" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span class="font-['Plus_Jakarta_Sans'] text-xs font-medium mt-1">Settings</span>
+</a>
+</nav>
+</body></html>

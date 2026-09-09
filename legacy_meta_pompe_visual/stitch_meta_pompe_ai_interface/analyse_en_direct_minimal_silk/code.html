@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analyse en Direct - Industrial Insight</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#8B5CF6", // Soft Lavender/Violet
+                        "on-primary": "#ffffff",
+                        "background": "#FFFFFF", // Pure White
+                        "surface": "#FFFFFF",
+                        "on-surface": "#2e3040",
+                        "on-surface-variant": "#6b7280",
+                        "secondary": "#94a3b8",
+                        "outline": "#e2e8f0",
+                        "error": "#ef4444"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FFFFFF; }
+        .neumorphic-raised {
+            background: #FFFFFF;
+            box-shadow: 8px 8px 16px #f0f0f0, -8px -8px 16px #ffffff;
+        }
+        .neumorphic-inset {
+            background: #FFFFFF;
+            box-shadow: inset 4px 4px 8px #f0f0f0, inset -4px -4px 8px #ffffff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen text-on-surface pb-32">
+<!-- TopAppBar -->
+<header class="bg-white sticky top-0 z-50 border-b border-slate-100">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="factory">factory</span>
+<h1 class="text-lg font-semibold tracking-tight text-on-surface">ANALYSE EN DIRECT</h1>
+</div>
+<span class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="container mx-auto px-6 pt-8 pb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+<!-- Sensor Positioning Section (Bento Card Large) -->
+<div class="lg:col-span-8 neumorphic-raised p-6 rounded-xl overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-sm font-semibold text-secondary uppercase tracking-wider">Positionnement Capteur</h2>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Guide Interactif</span>
+</div>
+<div class="neumorphic-inset rounded-lg p-4 flex flex-col items-center justify-center relative min-h-[300px]">
+<img alt="Pump positioning guide" class="rounded-lg mix-blend-multiply opacity-80 grayscale" data-alt="A clean, technical top-down view of a modern industrial water pump in a bright, minimalist industrial facility. Soft violet outlines highlight the optimal placement for a mobile device against the cold steel surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_q_5N0BRmuPi1bOaXWozzZVBxJe8AE-xnH2YPRwGQRaRTk42HuAzGX7d9WLeBM6urxce24PSHouS-88Si3L8RsMmqpOIVusbqdmPGEd6qxpEkE_DIL8GTmY-SG4D9HHSzMhmMn4e1eP0o_dzQLapgUAwjgtsyGhdct_QD4JOa8360Ml8RXl-OCcWT2VmEreoNPIUVeyfcr-x4SuOjQnlNHMYJBNvYNcmNWr-G9R8mTiPahgsItAxT3gAyYCz448H7jHaSN14kDSCh"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-24 h-48 border-4 border-primary rounded-xl neumorphic-raised flex items-center justify-center bg-white/20 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="smartphone">smartphone</span>
+</div>
+</div>
+</div>
+<p class="mt-4 text-center text-on-surface-variant text-sm font-medium">Placez votre smartphone à 15cm du moteur principal</p>
+</div>
+<!-- Signal Quality & Intensity (Side Cluster) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Quality Card -->
+<div class="neumorphic-raised p-6 rounded-xl">
+<h2 class="text-xs font-semibold text-secondary uppercase tracking-widest mb-4">Qualité du Signal</h2>
+<div class="flex flex-col items-center py-4">
+<div class="w-24 h-24 rounded-full neumorphic-inset flex items-center justify-center mb-4">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl font-bold" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+</div>
+</div>
+<span class="text-xl font-bold text-primary">EXCELLENT</span>
+</div>
+</div>
+<!-- Acoustic Intensity Card -->
+<div class="neumorphic-raised p-6 rounded-xl">
+<div class="flex justify-between items-start mb-4">
+<h2 class="text-xs font-semibold text-secondary uppercase tracking-widest">Intensité Acoustique</h2>
+<span class="text-primary font-semibold text-xs py-1 px-2 neumorphic-inset rounded-lg">ATTENTION</span>
+</div>
+<div class="relative pt-4">
+<div class="flex items-end justify-center gap-1 mb-2">
+<span class="text-4xl font-bold text-on-surface">78</span>
+<span class="text-lg text-secondary pb-1">dB</span>
+</div>
+<!-- Neumorphic Progress Bar -->
+<div class="h-6 w-full neumorphic-inset rounded-full overflow-hidden p-1">
+<div class="h-full bg-primary rounded-full" style="width: 78%;"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] text-secondary font-medium">
+<span>0 dB</span>
+<span>NORMAL</span>
+<span>120 dB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Waveform Visualization (Full Width Bento) -->
+<div class="lg:col-span-12 neumorphic-raised p-6 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-sm font-semibold text-secondary uppercase tracking-wider">Visualisation Spectrogramme</h2>
+<div class="flex gap-2">
+<button class="neumorphic-raised p-2 rounded-lg text-primary active:shadow-inner transition-all">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+</div>
+</div>
+<div class="h-48 neumorphic-inset rounded-xl overflow-hidden relative">
+<!-- Faux SVG Waveform -->
+<svg class="w-full h-full opacity-30" preserveaspectratio="none" viewbox="0 0 1000 200">
+<path d="M0 100 Q 50 20, 100 100 T 200 100 T 300 100 T 400 100 T 500 100 T 600 100 T 700 100 T 800 100 T 900 100 T 1000 100" fill="transparent" stroke="#8B5CF6" stroke-width="2"></path>
+<path d="M0 110 Q 50 150, 100 110 T 200 110 T 300 110 T 400 110 T 500 110 T 600 110 T 700 110 T 800 110 T 900 110 T 1000 110" fill="transparent" opacity="0.5" stroke="#8B5CF6" stroke-width="1"></path>
+</svg>
+<!-- Visualization Overlay -->
+<div class="absolute inset-0 flex items-center justify-around px-8">
+<div class="w-1 h-12 bg-primary/20 rounded-full"></div>
+<div class="w-1 h-24 bg-primary/30 rounded-full"></div>
+<div class="w-1 h-32 bg-primary rounded-full shadow-[0_0_10px_rgba(139,92,246,0.3)]"></div>
+<div class="w-1 h-28 bg-primary/60 rounded-full"></div>
+<div class="w-1 h-16 bg-primary/30 rounded-full"></div>
+<div class="w-1 h-36 bg-primary rounded-full shadow-[0_0_10px_rgba(139,92,246,0.3)]"></div>
+<div class="w-1 h-20 bg-primary/40 rounded-full"></div>
+<div class="w-1 h-14 bg-primary/20 rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Main Action Button -->
+<div class="lg:col-span-12 flex justify-center py-6">
+<button class="neumorphic-raised px-12 py-5 rounded-full flex items-center gap-4 group active:scale-95 transition-all">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<span class="text-primary font-bold text-lg tracking-wide uppercase">LANCER L'ANALYSE</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-[24px] bg-white shadow-[0px_-8px_16px_rgba(0,0,0,0.03)] border-t border-slate-100">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<!-- Tab: Status -->
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="monitoring">monitoring</span>
+<span class="text-[11px] font-medium">Status</span>
+</a>
+<!-- Tab: Analysis (Active) -->
+<a class="flex flex-col items-center justify-center text-primary neumorphic-inset rounded-2xl px-4 py-2" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
+<span class="text-[11px] font-medium">Analysis</span>
+</a>
+<!-- Tab: Sensors -->
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="text-[11px] font-medium">Sensors</span>
+</a>
+<!-- Tab: Alerts -->
+<a class="flex flex-col items-center justify-center text-slate-400 px-4 py-2 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="notifications_active">notifications_active</span>
+<span class="text-[11px] font-medium">Alerts</span>
+</a>
+</div>
+</nav>
+</body></html>

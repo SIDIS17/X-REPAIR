@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>META POMPE - Splash Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c4b5fd",
+                    "on-tertiary-fixed-variant": "#5b21b6",
+                    "secondary": "#6b7280",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#f9fafb",
+                    "on-tertiary-fixed": "#2e1065",
+                    "surface-container-low": "#ffffff",
+                    "on-tertiary-container": "#4c1d95",
+                    "error-container": "#fee2e2",
+                    "inverse-primary": "#c4b5fd",
+                    "on-secondary-container": "#4b5563",
+                    "error": "#dc2626",
+                    "outline": "#d1d5db",
+                    "on-error-container": "#991b1b",
+                    "surface-dim": "#f3f4f6",
+                    "surface-bright": "#ffffff",
+                    "primary-container": "#ddd6fe",
+                    "primary-fixed": "#ede9fe",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#f3f4f6",
+                    "on-surface": "#1f2937",
+                    "on-secondary-fixed": "#111827",
+                    "inverse-surface": "#111827",
+                    "tertiary-fixed": "#f5f3ff",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#ffffff",
+                    "tertiary-container": "#ddd6fe",
+                    "surface-container-highest": "#f3f4f6",
+                    "on-secondary-fixed-variant": "#374151",
+                    "surface-container": "#f9fafb",
+                    "surface-tint": "#8b5cf6",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#ffffff",
+                    "primary": "#8b5cf6",
+                    "surface": "#ffffff",
+                    "on-primary-fixed-variant": "#6d28d9",
+                    "on-primary-container": "#4c1d95",
+                    "secondary-fixed-dim": "#9ca3af",
+                    "secondary-fixed": "#e5e7eb",
+                    "on-background": "#1f2937",
+                    "tertiary-fixed-dim": "#c4b5fd",
+                    "tertiary": "#8b5cf6",
+                    "on-surface-variant": "#6b7280",
+                    "outline-variant": "#e5e7eb",
+                    "surface-variant": "#f9fafb",
+                    "on-primary-fixed": "#2e1065"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .neomorphic-raised {
+        box-shadow: 8px 8px 16px rgba(0,0,0,0.03), -8px -8px 16px rgba(255,255,255,1);
+      }
+      .neomorphic-inset {
+        box-shadow: inset 4px 4px 8px rgba(0,0,0,0.02), inset -4px -4px 8px rgba(255,255,255,1);
+      }
+      .neomorphic-text {
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-white font-body text-on-surface min-h-screen flex flex-col items-center justify-center p-6 selection:bg-primary-container selection:text-on-primary-container">
+<!-- Splash Screen Container -->
+<div class="max-w-md w-full flex flex-col items-center justify-between min-h-[707px]">
+<!-- Header/Spacing Top -->
+<div class="flex-1 flex flex-col items-center justify-center space-y-12">
+<!-- Logo Section -->
+<div class="relative">
+<!-- Outer Ring -->
+<div class="w-40 h-40 rounded-full neomorphic-raised bg-white flex items-center justify-center relative">
+<!-- Inner Recess -->
+<div class="w-32 h-32 rounded-full neomorphic-inset flex items-center justify-center">
+<!-- Brand Icon (Brain/Gear Hybrid representation) -->
+<div class="text-primary relative flex items-center justify-center">
+<span class="material-symbols-outlined text-7xl" data-icon="psychology">psychology</span>
+<span class="material-symbols-outlined text-3xl absolute -bottom-1 -right-1 bg-white rounded-full p-1" data-icon="settings">settings</span>
+</div>
+</div>
+</div>
+<!-- Decorative Orbitals -->
+<div class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-white neomorphic-raised flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<!-- Branding Text -->
+<div class="text-center space-y-2">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface neomorphic-text uppercase">
+                    META POMPE
+                </h1>
+<p class="text-on-surface-variant font-medium tracking-widest text-sm">
+                    VERSION 1.0
+                </p>
+</div>
+</div>
+<!-- Loading & Progress Section -->
+<div class="w-full max-w-xs space-y-8 flex flex-col items-center mb-12">
+<!-- Progress Track -->
+<div class="w-full h-4 bg-white rounded-full neomorphic-inset p-1">
+<!-- Progress Fill -->
+<div class="h-full w-[65%] rounded-full bg-primary shadow-[0_0_15px_rgba(139,92,246,0.25)]"></div>
+</div>
+<!-- Loading Status -->
+<div class="flex flex-col items-center space-y-2">
+<span class="text-primary font-bold text-lg">65%</span>
+<span class="text-on-surface-variant text-sm font-medium">Initialising Neural Core...</span>
+</div>
+</div>
+<!-- Footer / System Identity -->
+<div class="mt-auto pt-8 flex items-center space-y-4 flex-col opacity-70">
+<div class="flex space-x-4">
+<div class="w-10 h-10 rounded-xl neomorphic-raised flex items-center justify-center bg-white">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="shield">shield</span>
+</div>
+<div class="w-10 h-10 rounded-xl neomorphic-raised flex items-center justify-center bg-white">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="hub">hub</span>
+</div>
+<div class="w-10 h-10 rounded-xl neomorphic-raised flex items-center justify-center bg-white">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="cloud_done">cloud_done</span>
+</div>
+</div>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold text-outline">
+                Encrypted Connection Established
+            </p>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+<div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-primary/5 blur-[120px]"></div>
+</div>
+</body></html>

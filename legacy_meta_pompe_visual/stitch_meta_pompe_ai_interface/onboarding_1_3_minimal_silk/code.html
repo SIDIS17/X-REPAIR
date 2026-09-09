@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>META POMPE - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#C4B5FD",
+                    "on-tertiary-fixed-variant": "#5B21B6",
+                    "secondary": "#6C6E7E",
+                    "on-secondary": "#FFFFFF",
+                    "surface-container-high": "#F3F4F6",
+                    "on-tertiary-fixed": "#2E1065",
+                    "surface-container-low": "#F9FAFB",
+                    "on-tertiary-container": "#4C1D95",
+                    "error-container": "#FEE2E2",
+                    "inverse-primary": "#C4B5FD",
+                    "on-secondary-container": "#4B5563",
+                    "error": "#DC2626",
+                    "outline": "#D1D5DB",
+                    "on-error-container": "#991B1B",
+                    "surface-dim": "#F3F4F6",
+                    "surface-bright": "#FFFFFF",
+                    "primary-container": "#EDE9FE",
+                    "primary-fixed": "#EDE9FE",
+                    "on-tertiary": "#FFFFFF",
+                    "secondary-container": "#F3F4F6",
+                    "on-surface": "#1F2937",
+                    "on-secondary-fixed": "#111827",
+                    "inverse-surface": "#1F2937",
+                    "tertiary-fixed": "#EDE9FE",
+                    "on-error": "#FFFFFF",
+                    "on-primary": "#FFFFFF",
+                    "inverse-on-surface": "#FFFFFF",
+                    "tertiary-container": "#DDD6FE",
+                    "surface-container-highest": "#E5E7EB",
+                    "on-secondary-fixed-variant": "#374151",
+                    "surface-container": "#F9FAFB",
+                    "surface-tint": "#8B5CF6",
+                    "surface-container-lowest": "#FFFFFF",
+                    "background": "#FFFFFF",
+                    "primary": "#8B5CF6",
+                    "surface": "#FFFFFF",
+                    "on-primary-fixed-variant": "#5B21B6",
+                    "on-primary-container": "#4C1D95",
+                    "secondary-fixed-dim": "#9CA3AF",
+                    "secondary-fixed": "#E5E7EB",
+                    "on-background": "#1F2937",
+                    "tertiary-fixed-dim": "#C4B5FD",
+                    "tertiary": "#8B5CF6",
+                    "on-surface-variant": "#4B5563",
+                    "outline-variant": "#E5E7EB",
+                    "surface-variant": "#F3F4F6",
+                    "on-primary-fixed": "#2E1065"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1F2937;
+        }
+        .neomorph-raised {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.05), -6px -6px 12px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+        .neomorph-inset {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.04), inset -4px -4px 8px rgba(255,255,255,0.7);
+        }
+        .neomorph-button-active:active {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.04), inset -4px -4px 8px rgba(255,255,255,0.7);
+            transform: scale(0.98);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between bg-background">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-6 py-4 bg-white docked full-width top-0 shadow-[0_2px_10px_rgba(0,0,0,0.03)] z-50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+</div>
+<h1 class="text-xl font-semibold tracking-tight text-primary font-['Plus_Jakarta_Sans']">META POMPE</h1>
+<div class="w-10 h-10 rounded-full neomorph-raised overflow-hidden border-2 border-white/50">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzIfPKOo9hhAeJJPoO7rpMnm9riIXcixwxYQ_XI8sz9Y2Ddz2FX0YXPSjQtBG6nDuqRxSJtQJImaNrtNsllEx8GpZk4X-UC-sVfOrjiYf3at5_4gqTdQ9JvmiRDn7E6-rQ0a2FXAJ4Z5EarUGH8puuJmZw8ce8oresb6qyTxsQk8J7c4RHi6Z11IxASSu57ctbBKL7mGjNEkYfeLpfMhWeekXeeLfuIMcIaa3NclodQUokmi2_dSFt78H3qXqBJjg974CRZ_iAg0ft"/>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-6 w-full max-w-lg">
+<!-- Bento-style Feature Card -->
+<div class="w-full neomorph-raised rounded-3xl p-8 bg-white flex flex-col items-center text-center gap-8 mb-12">
+<!-- AI Brain Icon Visual -->
+<div class="relative w-32 h-32 flex items-center justify-center">
+<div class="absolute inset-0 neomorph-inset rounded-full"></div>
+<div class="relative w-24 h-24 neomorph-raised rounded-full bg-white flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-5xl" data-icon="psychology" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+</div>
+<!-- Content Section -->
+<div class="space-y-4">
+<h2 class="text-2xl font-bold text-on-surface leading-tight tracking-tight">
+                    DIAGNOSTIC PAR INTELLIGENCE ARTIFICIELLE
+                </h2>
+<p class="text-on-surface-variant text-base leading-relaxed px-2">
+                    Notre algorithme analyse les fréquences sonores de votre installation pour détecter les anomalies avant qu'elles ne deviennent critiques. Une écoute intelligente pour une sérénité totale.
+                </p>
+</div>
+<!-- Visualization of Audio Analysis -->
+<div class="w-full h-24 neomorph-inset rounded-2xl flex items-center justify-around px-4 gap-1 overflow-hidden">
+<div class="w-2 h-8 bg-tertiary-container rounded-full opacity-40"></div>
+<div class="w-2 h-12 bg-tertiary-container rounded-full opacity-60"></div>
+<div class="w-2 h-16 bg-primary rounded-full"></div>
+<div class="w-2 h-10 bg-tertiary-container rounded-full opacity-70"></div>
+<div class="w-2 h-14 bg-primary rounded-full"></div>
+<div class="w-2 h-6 bg-tertiary-container rounded-full opacity-40"></div>
+<div class="w-2 h-18 bg-primary rounded-full"></div>
+<div class="w-2 h-12 bg-tertiary-container rounded-full opacity-60"></div>
+<div class="w-2 h-8 bg-tertiary-container rounded-full opacity-40"></div>
+<div class="w-2 h-14 bg-primary rounded-full"></div>
+<div class="w-2 h-10 bg-tertiary-container rounded-full opacity-70"></div>
+</div>
+</div>
+<!-- Progress Indicators -->
+<div class="flex items-center gap-4 mb-8">
+<div class="w-8 h-2 rounded-full bg-primary neomorph-raised"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant neomorph-inset"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant neomorph-inset"></div>
+</div>
+</main>
+<!-- Bottom Action Section -->
+<footer class="w-full max-w-lg px-6 pb-12">
+<button class="w-full py-5 rounded-2xl bg-white text-primary font-bold text-lg neomorph-raised neomorph-button-active transition-all flex items-center justify-center gap-2 group border border-purple-50">
+            Suivant
+            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</footer>
+<!-- Hidden BottomNavBar for structure -->
+<nav class="hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white rounded-t-[24px] shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
+<div class="flex flex-col items-center justify-center text-slate-500 p-2">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-xs font-medium">Status</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 p-2">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-xs font-medium">Reports</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 p-2">
+<span class="material-symbols-outlined" data-icon="timeline">timeline</span>
+<span class="text-xs font-medium">History</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 p-2">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span class="text-xs font-medium">Settings</span>
+</div>
+</nav>
+</body></html>

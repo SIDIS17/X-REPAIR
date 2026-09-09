@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>X-Repair 17A — Multimodal Diagnostic Platform</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{
+ colors:{primary:"#8B5CF6",soft:"#F5F3FF",ink:"#1F2937",muted:"#6B7280",line:"#E5E7EB"},
+ fontFamily:{sans:["Plus Jakarta Sans","sans-serif"]}
+}}}
+</script>
+<style>
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:#1F2937}
+.neo{background:#fff;box-shadow:8px 8px 18px rgba(0,0,0,.045),-8px -8px 18px rgba(255,255,255,1);border:1px solid rgba(0,0,0,.035)}
+.neo-in{background:#fff;box-shadow:inset 4px 4px 10px rgba(0,0,0,.04),inset -4px -4px 10px rgba(255,255,255,.9);border:1px solid rgba(0,0,0,.025)}
+.module-card{transition:.2s}.module-card:hover{transform:translateY(-3px)}
+.tab.active{background:#8B5CF6;color:white}
+.spinner{animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body class="min-h-screen pb-24">
+
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="neo rounded-xl w-11 h-11 flex items-center justify-center text-primary">
+        <span class="material-symbols-outlined">handyman</span>
+      </div>
+      <div>
+        <div class="font-extrabold tracking-tight text-xl">X-REPAIR <span class="text-primary">17A</span></div>
+        <div class="text-xs text-muted">Multimodal Intelligent Maintenance Platform</div>
+      </div>
+    </div>
+    <div class="flex gap-2 items-center">
+      <span id="apiState" class="text-xs px-3 py-2 rounded-full bg-soft text-primary font-semibold">API...</span>
+      <img src="/assets/branding/logo_17a.jpeg" onerror="this.style.display='none'" class="w-10 h-10 rounded-xl object-cover">
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-5 pt-7 space-y-8">
+
+<section class="grid lg:grid-cols-[1.3fr_.7fr] gap-6">
+  <div class="neo rounded-3xl p-7 md:p-9 overflow-hidden relative">
+    <div class="absolute -right-12 -top-12 w-56 h-56 rounded-full bg-primary/5"></div>
+    <div class="relative">
+      <span class="inline-flex px-3 py-1 rounded-full bg-soft text-primary font-bold text-xs">X-REPAIR CORE</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold mt-5 leading-tight">Diagnostiquer avant la panne.<br><span class="text-primary">Réparer avec méthode.</span></h1>
+      <p class="mt-5 text-muted max-w-2xl">Une interface unifiée inspirée du visuel META POMPE pour analyser vibrations, acoustique, thermique, puissance et circuits électroniques.</p>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <button onclick="runAllDemos()" class="px-5 py-3 rounded-xl bg-primary text-white font-bold shadow-lg shadow-violet-200">Lancer une démonstration complète</button>
+        <button onclick="showTab('core')" class="px-5 py-3 rounded-xl neo text-primary font-bold">Voir X-Repair Core</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="neo rounded-3xl p-6 flex items-center justify-center relative overflow-hidden min-h-[320px]">
+    <img src="/assets/branding/spiderman_xrepair.jpg" onerror="this.style.display='none'" class="absolute inset-0 w-full h-full object-cover opacity-90">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+    <div class="relative self-end w-full text-white">
+      <div class="font-extrabold text-2xl">X-Repair Visual Identity</div>
+      <div class="text-sm opacity-90 mt-1">Surveillance • Diagnostic • Décision • Réparation assistée</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="flex items-end justify-between mb-4">
+    <div>
+      <h2 class="text-2xl font-extrabold">Modules</h2>
+      <p class="text-sm text-muted">Choisissez le domaine de diagnostic.</p>
+    </div>
+  </div>
+  <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+    <button onclick="showTab('vibe')" class="module-card neo rounded-2xl p-5 text-left">
+      <span class="material-symbols-outlined text-primary text-3xl">vibration</span>
+      <div class="font-bold text-lg mt-3">X-Repair Vibe</div><p class="text-sm text-muted mt-1">Vibrations, FFT, 1X–4X, roulements.</p>
+    </button>
+    <button onclick="showTab('circuit')" class="module-card neo rounded-2xl p-5 text-left">
+      <span class="material-symbols-outlined text-primary text-3xl">memory</span>
+      <div class="font-bold text-lg mt-3">X-Repair Circuit</div><p class="text-sm text-muted mt-1">Netlists, SPICE, vérification électronique.</p>
+    </button>
+    <button onclick="showTab('acoustic')" class="module-card neo rounded-2xl p-5 text-left">
+      <span class="material-symbols-outlined text-primary text-3xl">graphic_eq</span>
+      <div class="font-bold text-lg mt-3">X-Repair Acoustic</div><p class="text-sm text-muted mt-1">Bruit, impacts, fréquences dominantes.</p>
+    </button>
+    <button onclick="showTab('thermal')" class="module-card neo rounded-2xl p-5 text-left">
+      <span class="material-symbols-outlined text-primary text-3xl">device_thermostat</span>
+      <div class="font-bold text-lg mt-3">X-Repair Thermal</div><p class="text-sm text-muted mt-1">Température, gradients et surchauffe.</p>
+    </button>
+    <button onclick="showTab('power')" class="module-card neo rounded-2xl p-5 text-left">
+      <span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+      <div class="font-bold text-lg mt-3">X-Repair Power</div><p class="text-sm text-muted mt-1">Vrms, Irms, puissance et facteur de puissance.</p>
+    </button>
+    <button onclick="showTab('core')" class="module-card neo rounded-2xl p-5 text-left">
+      <span class="material-symbols-outlined text-primary text-3xl">hub</span>
+      <div class="font-bold text-lg mt-3">X-Repair Core</div><p class="text-sm text-muted mt-1">Fusion multimodale et priorité maintenance.</p>
+    </button>
+  </div>
+</section>
+
+<section class="neo rounded-3xl p-5 md:p-7">
+  <div class="flex flex-wrap gap-2 mb-6">
+    <button class="tab active px-4 py-2 rounded-xl text-sm font-bold neo" data-tab="vibe" onclick="showTab('vibe')">Vibe</button>
+    <button class="tab px-4 py-2 rounded-xl text-sm font-bold neo" data-tab="circuit" onclick="showTab('circuit')">Circuit</button>
+    <button class="tab px-4 py-2 rounded-xl text-sm font-bold neo" data-tab="acoustic" onclick="showTab('acoustic')">Acoustic</button>
+    <button class="tab px-4 py-2 rounded-xl text-sm font-bold neo" data-tab="thermal" onclick="showTab('thermal')">Thermal</button>
+    <button class="tab px-4 py-2 rounded-xl text-sm font-bold neo" data-tab="power" onclick="showTab('power')">Power</button>
+    <button class="tab px-4 py-2 rounded-xl text-sm font-bold neo" data-tab="core" onclick="showTab('core')">Core</button>
+  </div>
+
+  <div id="vibe" class="panel">
+    <h3 class="font-extrabold text-xl">X-Repair Vibe</h3>
+    <p class="text-sm text-muted mt-1">Démo synthétique d’un moteur à 1500 tr/min.</p>
+    <button onclick="demoVibe()" class="mt-4 bg-primary text-white px-5 py-3 rounded-xl font-bold">Analyser vibration</button>
+  </div>
+
+  <div id="circuit" class="panel hidden">
+    <h3 class="font-extrabold text-xl">X-Repair Circuit</h3>
+    <p class="text-sm text-muted mt-1">Collez une netlist SPICE ou utilisez l’exemple.</p>
+    <textarea id="netlist" class="mt-4 w-full h-52 neo-in rounded-xl p-4 font-mono text-sm">* X-Repair demo
+V1 in 0 DC 12
+R1 in out 1k
+R2 out 0 2k
+.op
+.end</textarea>
+    <div class="flex gap-3 mt-4">
+      <button onclick="demoCircuit(false)" class="bg-primary text-white px-5 py-3 rounded-xl font-bold">Vérifier</button>
+      <button onclick="demoCircuit(true)" class="neo px-5 py-3 rounded-xl font-bold text-primary">Lancer SPICE si disponible</button>
+    </div>
+  </div>
+
+  <div id="acoustic" class="panel hidden">
+    <h3 class="font-extrabold text-xl">X-Repair Acoustic</h3>
+    <p class="text-sm text-muted mt-1">Analyse d’une signature acoustique synthétique.</p>
+    <button onclick="demoAcoustic()" class="mt-4 bg-primary text-white px-5 py-3 rounded-xl font-bold">Analyser acoustique</button>
+  </div>
+
+  <div id="thermal" class="panel hidden">
+    <h3 class="font-extrabold text-xl">X-Repair Thermal</h3>
+    <p class="text-sm text-muted mt-1">Analyse d’un profil thermique.</p>
+    <button onclick="demoThermal()" class="mt-4 bg-primary text-white px-5 py-3 rounded-xl font-bold">Analyser températures</button>
+  </div>
+
+  <div id="power" class="panel hidden">
+    <h3 class="font-extrabold text-xl">X-Repair Power</h3>
+    <p class="text-sm text-muted mt-1">Analyse tension/courant et facteur de puissance.</p>
+    <button onclick="demoPower()" class="mt-4 bg-primary text-white px-5 py-3 rounded-xl font-bold">Analyser puissance</button>
+  </div>
+
+  <div id="core" class="panel hidden">
+    <h3 class="font-extrabold text-xl">X-Repair Core</h3>
+    <p class="text-sm text-muted mt-1">Fusionne les résultats déjà calculés.</p>
+    <button onclick="fuseCore()" class="mt-4 bg-primary text-white px-5 py-3 rounded-xl font-bold">Fusionner diagnostics</button>
+  </div>
+
+  <div class="grid lg:grid-cols-[.7fr_1.3fr] gap-5 mt-7">
+    <div class="neo-in rounded-2xl p-5">
+      <div class="text-xs uppercase tracking-wider text-muted font-bold">État global</div>
+      <div id="healthScore" class="text-5xl font-extrabold mt-3">—</div>
+      <div id="healthLabel" class="text-primary font-bold mt-2">En attente d’analyse</div>
+    </div>
+    <pre id="output" class="neo-in rounded-2xl p-5 overflow-auto text-xs min-h-[260px] whitespace-pre-wrap">Les résultats apparaîtront ici.</pre>
+  </div>
+</section>
+
+</main>
+
+<script>
+const state={results:{}};
+
+function showTab(name){
+  document.querySelectorAll('.panel').forEach(x=>x.classList.add('hidden'));
+  document.getElementById(name).classList.remove('hidden');
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));
+  window.scrollTo({top:document.getElementById(name).getBoundingClientRect().top+window.scrollY-160,behavior:'smooth'});
+}
+
+async function api(path,payload){
+  const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  const j=await r.json();
+  if(!r.ok) throw new Error(j.detail||'Erreur API');
+  return j;
+}
+function render(res,key){
+  state.results[key]=res;
+  document.getElementById('output').textContent=JSON.stringify(res,null,2);
+  if(res.health_score!==undefined){
+    document.getElementById('healthScore').textContent=Math.round(res.health_score)+'%';
+    document.getElementById('healthLabel').textContent=res.diagnostic||res.status||res.priority||res.module;
+  }
+}
+function sig(n,fs,freq,amp=1,noise=.04){
+  const a=[];for(let i=0;i<n;i++)a.push(amp*Math.sin(2*Math.PI*freq*i/fs)+noise*(Math.random()-.5));return a;
+}
+async function demoVibe(){
+  const fs=512,rpm=1500,f1=rpm/60;
+  const s=sig(512,fs,f1,.75).map((x,i)=>x+.12*Math.sin(2*Math.PI*2*f1*i/fs));
+  render(await api('/api/vibe/analyze',{samples:s,fs,rpm}),'vibe');
+}
+async function demoAcoustic(){
+  const fs=8000; const s=sig(700,fs,900,.25).map((x,i)=>x+(i%97===0?.8:0));
+  render(await api('/api/acoustic/analyze',{samples:s,fs}),'acoustic');
+}
+async function demoThermal(){
+  render(await api('/api/thermal/analyze',{temperatures_c:[45,49,52,56,61,68,72],ambient_c:27,limit_c:80}),'thermal');
+}
+async function demoPower(){
+  const n=256,fs=2560,f=50,v=[],i=[];
+  for(let k=0;k<n;k++){
+    const t=k/fs;v.push(325*Math.sin(2*Math.PI*f*t));i.push(4.2*Math.sin(2*Math.PI*f*t-0.55));
+  }
+  render(await api('/api/power/analyze',{voltage:v,current:i,nominal_voltage:230}),'power');
+}
+async function demoCircuit(run_spice=false){
+  const netlist=document.getElementById('netlist').value;
+  render(await api('/api/circuit/analyze',{netlist,run_spice}),'circuit');
+}
+async function fuseCore(){
+  const res=await api('/api/core/fuse',{results:state.results});
+  render(res,'core');
+}
+async function runAllDemos(){
+  try{
+    await demoVibe(); await demoAcoustic(); await demoThermal(); await demoPower(); await demoCircuit(false); await fuseCore(); showTab('core');
+  }catch(e){document.getElementById('output').textContent='Erreur: '+e.message}
+}
+fetch('/api/health').then(r=>r.json()).then(()=>{
+  const x=document.getElementById('apiState');x.textContent='API EN LIGNE';x.className='text-xs px-3 py-2 rounded-full bg-green-50 text-green-700 font-semibold';
+}).catch(()=>{
+  const x=document.getElementById('apiState');x.textContent='API HORS LIGNE';x.className='text-xs px-3 py-2 rounded-full bg-red-50 text-red-700 font-semibold';
+});
+</script>
+</body>
+</html>

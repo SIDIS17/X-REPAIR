@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c4b5fd",
+                    "on-tertiary-fixed-variant": "#5b21b6",
+                    "secondary": "#6b7280",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#f9fafb",
+                    "on-tertiary-fixed": "#2e1065",
+                    "surface-container-low": "#ffffff",
+                    "on-tertiary-container": "#4c1d95",
+                    "error-container": "#fee2e2",
+                    "inverse-primary": "#c4b5fd",
+                    "on-secondary-container": "#4b5563",
+                    "error": "#dc2626",
+                    "outline": "#d1d5db",
+                    "on-error-container": "#991b1b",
+                    "surface-dim": "#f3f4f6",
+                    "surface-bright": "#ffffff",
+                    "primary-container": "#ede9fe",
+                    "primary-fixed": "#ddd6fe",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#f3f4f6",
+                    "on-surface": "#111827",
+                    "on-secondary-fixed": "#111827",
+                    "inverse-surface": "#111827",
+                    "tertiary-fixed": "#ede9fe",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#ffffff",
+                    "tertiary-container": "#ddd6fe",
+                    "surface-container-highest": "#f3f4f6",
+                    "on-secondary-fixed-variant": "#374151",
+                    "surface-container": "#ffffff",
+                    "surface-tint": "#8b5cf6",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#ffffff",
+                    "primary": "#8b5cf6",
+                    "surface": "#ffffff",
+                    "on-primary-fixed-variant": "#6d28d9",
+                    "on-primary-container": "#4c1d95",
+                    "secondary-fixed-dim": "#9ca3af",
+                    "secondary-fixed": "#e5e7eb",
+                    "on-background": "#111827",
+                    "tertiary-fixed-dim": "#c4b5fd",
+                    "tertiary": "#8b5cf6",
+                    "on-surface-variant": "#4b5563",
+                    "outline-variant": "#e5e7eb",
+                    "surface-variant": "#f9fafb",
+                    "on-primary-fixed": "#2e1065"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neumorphic-raised {
+            box-shadow: 8px 8px 16px rgba(0,0,0,0.05), -8px -8px 16px rgba(255,255,255,0.8);
+        }
+        .neumorphic-inset {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.03), inset -4px -4px 8px rgba(255,255,255,0.7);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-white text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white shadow-[0_4px_12px_rgba(0,0,0,0.03)] flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50">
+<button class="flex items-center justify-center w-10 h-10 rounded-xl neumorphic-raised bg-white hover:scale-105 transition-transform active:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.03)]">
+<span class="material-symbols-outlined text-slate-400">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-semibold text-xl tracking-tight text-primary">META POMPE</h1>
+<div class="w-10 h-10 rounded-full neumorphic-raised overflow-hidden border-2 border-white shadow-sm">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh8Z-919pP-URu_LcJK_j0ya5Ej2pGyIv4K_2BnnWWCkALam2EpUs-I4Kb1w4jPa8VSTEqNlh6P_oGnrtNlS5HzCj-bqeC5EXzqH-Gs_CJQniKMxljlQblljcTBt1QaWCAGuM8v2J8rpiBiNL88rpKwVHl7HB0vr-JYblM9l-zK5DPRkl8-aXJd-ivq6Gtr7JedFoUQYApPJqM18RDyywT1MAX2_pziD166tdg3Alp7BdKtsURr4OdNovl1zrfG3-Ur7xVLWlIUd3Q"/>
+</div>
+</header>
+<main class="flex-1 p-6 space-y-8 max-w-4xl mx-auto w-full pb-32">
+<!-- Unit Header -->
+<div class="flex flex-col gap-1">
+<span class="text-on-surface-variant text-xs font-bold tracking-widest uppercase opacity-70">Unité de diagnostic</span>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Unit MP-0992</h2>
+</div>
+<!-- Critical Alert Banner -->
+<div class="p-5 rounded-2xl bg-white neumorphic-raised border-l-4 border-error flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-error text-sm uppercase tracking-wider">Alerte Critique</h3>
+<p class="text-sm text-on-surface-variant">Défaillance structurelle imminente détectée sur l'axe principal.</p>
+</div>
+</div>
+<!-- Anomaly Classification Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Classification Card -->
+<div class="p-6 rounded-3xl bg-white neumorphic-raised flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h3 class="font-bold text-on-surface">Classification</h3>
+<span class="px-3 py-1 bg-primary/10 text-primary font-bold rounded-full text-[10px] tracking-wider uppercase">87% CONFIDENCE</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm font-bold">
+<span class="text-on-surface-variant">Mechanical Failure</span>
+<span class="text-primary">87%</span>
+</div>
+<div class="h-3 w-full bg-white neumorphic-inset rounded-full overflow-hidden p-[2px]">
+<div class="h-full bg-primary rounded-full" style="width: 87%"></div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed font-medium">
+                    L'analyse morphologique du signal indique une usure prématurée des roulements à billes de type 6205-2RS.
+                </p>
+</div>
+</div>
+<!-- Environmental Data -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-5 rounded-3xl bg-white neumorphic-raised flex flex-col items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+<span class="text-2xl font-extrabold text-on-surface">84.2°C</span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Température</span>
+</div>
+<div class="p-5 rounded-3xl bg-white neumorphic-raised flex flex-col items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">vibration</span>
+<span class="text-2xl font-extrabold text-on-surface">12.4 <span class="text-xs font-normal">mm/s</span></span>
+<span class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">Vibration</span>
+</div>
+</div>
+</div>
+<!-- Spectral Analysis -->
+<div class="p-6 rounded-3xl bg-white neumorphic-raised space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-on-surface">Analyse Spectrale</h3>
+<span class="text-[10px] font-bold text-on-surface-variant/50 uppercase tracking-widest">FFT Window: 1024ms</span>
+</div>
+<div class="h-48 w-full neumorphic-inset rounded-2xl flex items-end justify-around p-4 gap-1 bg-white">
+<!-- Mock Chart Bars -->
+<div class="w-2 bg-slate-100 rounded-t-full h-[20%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[35%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[15%]"></div>
+<div class="w-2 bg-primary/40 rounded-t-full h-[65%]"></div>
+<div class="w-2 bg-primary rounded-t-full h-[95%] shadow-[0_0_12px_rgba(139,92,246,0.2)]"></div>
+<div class="w-2 bg-primary/40 rounded-t-full h-[70%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[30%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[45%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[25%]"></div>
+<div class="w-2 bg-primary/20 rounded-t-full h-[55%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[10%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[40%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[60%]"></div>
+<div class="w-2 bg-primary/10 rounded-t-full h-[85%]"></div>
+<div class="w-2 bg-slate-100 rounded-t-full h-[20%]"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-bold uppercase tracking-widest opacity-60">
+<span>0 Hz</span>
+<span>Peak: 1240 Hz</span>
+<span>5000 Hz</span>
+</div>
+</div>
+<!-- Action Buttons Section -->
+<div class="grid grid-cols-2 gap-6 pt-4">
+<button class="py-4 px-6 rounded-2xl bg-white neumorphic-raised flex items-center justify-center gap-3 text-primary font-bold hover:scale-[1.02] transition-transform active:shadow-inner border border-primary/5">
+<span class="material-symbols-outlined text-xl">shopping_cart</span>
+            Commander
+        </button>
+<button class="py-4 px-6 rounded-2xl bg-primary text-white shadow-[0_8px_20px_rgba(139,92,246,0.3)] flex items-center justify-center gap-3 font-bold hover:scale-[1.02] transition-transform active:opacity-90">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+            Planifier
+        </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-white rounded-t-[32px] shadow-[0_-8px_24px_rgba(0,0,0,0.04)] border-t border-slate-50">
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-tighter mt-1">Status</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary bg-primary/5 rounded-2xl px-5 py-2 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-tighter mt-1">Reports</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">timeline</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-tighter mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-primary transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">tune</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-tighter mt-1">Settings</span>
+</a>
+</nav>
+</body></html>
